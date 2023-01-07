@@ -24,6 +24,7 @@ struct ContentView: View {
             VStack {
                 Text("DirtyCow")
                     .font(.largeTitle)
+                    .fontWeight(.bold)
                     .foregroundColor(.white)
                     .padding(.top, 50)
                 List(tweaks) { tweak in
@@ -34,7 +35,7 @@ struct ContentView: View {
                                     let alert = UIAlertController(title: "Warning", message: "This tweak is dangerous and should not be used because it can cause damage to your device. Are you sure you want to continue?", preferredStyle: .alert)
                                     alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                                         let alert = UIAlertController(title: "Please, use with caution", message: "Do not go be a crybaby if you break your device, this is your own fault and if you ask for help, we will laugh at you.", preferredStyle: .alert)
-                                        alert.addAction(UIAlertAction(title: "I'm sure.", style: .default, handler: { action in
+                                        alert.addAction(UIAlertAction(title: "I'm sure.", style: .destructive, handler: { action in
                                             runTweak(tweak.action)
                                         }))
                                         alert.addAction(UIAlertAction(title: "No, take me back.", style: .cancel, handler: nil))
@@ -50,7 +51,7 @@ struct ContentView: View {
                                 if tweak.danger {
                                     HStack {
                                         Image(systemName: "exclamationmark.triangle.fill")
-                                            .foregroundColor(.red)
+                                            .foregroundColor(.orange)
                                         Text(tweak.name)
                                             .font(.headline)
                                             .foregroundColor(.white)
@@ -75,14 +76,14 @@ while true {
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
-                        .background(Color.blue)
+                        .background(.accentColor)
                         .cornerRadius(40)
                 }
                 .padding(.top, 50)
             }
         }.onAppear {
             let alert = UIAlertController(title: "Warning", message: "This app is for educational purposes only. I'm not responsible for any damage caused by this app.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Credits", style: .default, handler: { action in
                 let credits = ["haxi0", "verygenericname"]
                 let alert = UIAlertController(title: "Credits", message: "This app was made by Mineek, with help from \(credits.joined(separator: ", ")).", preferredStyle: .alert)
