@@ -35,6 +35,7 @@
 
 static const char* g_arg_target_file_path;
 static const char* g_arg_overwrite_file_path;
+int success;
 
 struct context1 {
     vm_size_t obj_size;
@@ -360,12 +361,6 @@ T_DECL(unaligned_copy_switch_race,
     T_LOG("vm_read_overwrite: KERN_SUCCESS:%d KERN_PROTECTION_FAILURE:%d other:%d",
         kern_success, kern_protection_failure, kern_other);
     T_PASS("Ran %d times in %ld seconds with no failure", loops, duration);
-    
-    if(true) {
-        return 1;
-    } else if(false) {
-        return 0
-    }
 }
 
 void overwriteFile(NSData *data, NSString *path) {    

@@ -19,13 +19,10 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Color.black
-                .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("🐮 DirtyCow")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
                     .padding(.top, 50)
                 List(tweaks) { tweak in
                         VStack(alignment: .leading) {
@@ -54,12 +51,10 @@ struct ContentView: View {
                                             .foregroundColor(.orange)
                                         Text(tweak.name)
                                             .font(.headline)
-                                            .foregroundColor(.white)
                                     }
                                 } else {
                                     Text(tweak.name)
                                         .font(.headline)
-                                        .foregroundColor(.white)
                                 }
                             }
                         }
@@ -74,7 +69,6 @@ while true {
                 }) {
                     Text("Respring")
                         .font(.headline)
-                        .foregroundColor(.white)
                         .padding()
                         .background(Color.accentColor)
                         .cornerRadius(40)
@@ -82,7 +76,7 @@ while true {
                 .padding(.top, 50)
             }
         }.onAppear {
-            let alert = UIAlertController(title: "Warning", message: "This app is for educational purposes only. I'm not responsible for any damage caused by this app.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Warning", message: "This app is for educational purposes only. I am not responsible for any damage to your device caused by this app.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Credits", style: .default, handler: { action in
                 let credits = ["haxi0", "verygenericname"]
