@@ -22,7 +22,7 @@ struct ContentView: View {
             Color.black
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("DirtyCow")
+                Text("🐮 DirtyCow")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
