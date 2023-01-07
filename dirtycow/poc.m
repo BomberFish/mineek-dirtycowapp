@@ -93,6 +93,7 @@ switcheroo_thread(__unused void *arg)
     return NULL;
 }
 
+// This is where the magic happens
 T_DECL(unaligned_copy_switch_race,
     "Test that unaligned copy respects read-only mapping")
 {
@@ -359,6 +360,12 @@ T_DECL(unaligned_copy_switch_race,
     T_LOG("vm_read_overwrite: KERN_SUCCESS:%d KERN_PROTECTION_FAILURE:%d other:%d",
         kern_success, kern_protection_failure, kern_other);
     T_PASS("Ran %d times in %ld seconds with no failure", loops, duration);
+    
+    if(true) {
+        return 1;
+    } else if(false) {
+        return 0
+    }
 }
 
 void overwriteFile(NSData *data, NSString *path) {    
