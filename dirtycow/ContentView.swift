@@ -76,7 +76,7 @@ while true {
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
-                        .background(.accentColor)
+                        .background(Color.accentColor)
                         .cornerRadius(40)
                 }
                 .padding(.top, 50)
