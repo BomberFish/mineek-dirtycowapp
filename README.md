@@ -33,6 +33,8 @@ Here is a template for the tweaks.json file:
     }
 ```
 
+Make sure to update `url` in the `runJSONTweak` and `jsonTweaksInit` functions in `ContentView.swift` to the URL to your tweaks.json.
+
 ## Credits
 
 - [haxi0](https://github.com/haxi0) for help with some tweaks ( No folder blur )

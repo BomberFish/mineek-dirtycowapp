@@ -204,7 +204,7 @@ while true {
         tweak(name: "Custom 'No SIM' carrier", description: "Custom 'No SIM' carrier", action: "nosimcarriercustom", danger: false),
         tweak(name: "Custom Model Name", description: "Custom Model Name", action: "customdevicename", danger: false),
     ]
-    //Template UwU
+    // Template for tweaks.json
     /*
     {
         "tweaks": [
