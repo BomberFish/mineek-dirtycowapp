@@ -177,6 +177,19 @@ while true {
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
+        case "customdevicename":
+            // ask user for a 6 character string
+            let alert = UIAlertController(title: "Custom Model Name", message: "Enter a string to use as the model name.", preferredStyle: .alert)
+            alert.addTextField(configurationHandler: { textField in
+                textField.placeholder = "pwned."
+            })
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                let text = alert.textFields![0].text!
+                stringsChange(stringsPath: "/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist", key: "ArtworkDeviceProductDescription", value: text)
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
         default:
             runJSONTweak(tweak)
         }
@@ -189,7 +202,9 @@ while true {
         tweak(name: "Hide folder background", description: "Hide folder background", action: "hidefolderbg", danger: false),
         tweak(name: "Hide home bar", description: "Hide home bar", action: "hidehomebarbg", danger: false),
         tweak(name: "Custom 'No SIM' carrier", description: "Custom 'No SIM' carrier", action: "nosimcarriercustom", danger: false),
+        tweak(name: "Custom Model Name", description: "Custom Model Name", action: "customdevicename", danger: false),
     ]
+    //Template UwU
     /*
     {
         "tweaks": [
@@ -237,7 +252,7 @@ while true {
 
     func runJSONTweak(_ tweak: String) {
         // get the JSON file
-        let url = URL(string: "https://raw.githubusercontent.com/mineek/dirtycowapp/main/tweaks.json")!
+        let url = URL(string: "https://raw.githubusercontent.com/BomberFish/mineek-dirtycowapp/main/tweaks.json")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 print("Error: No data to decode")
@@ -275,7 +290,7 @@ while true {
 
     func jsonTweaksInit() {
         // get the JSON file
-        let url = URL(string: "https://raw.githubusercontent.com/mineek/dirtycowapp/main/tweaks.json")!
+        let url = URL(string: "https://raw.githubusercontent.com/BomberFish/mineek-dirtycowapp/main/tweaks.json")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 print("Error: No data to decode")
