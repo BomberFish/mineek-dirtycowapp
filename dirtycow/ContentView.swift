@@ -19,10 +19,13 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
+            Color(UIColor.systemBackground)
+                .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("🐮 DirtyCow")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .foregroundColor(.white)
                     .padding(.top, 50)
                 List(tweaks) { tweak in
                         VStack(alignment: .leading) {
@@ -51,10 +54,12 @@ struct ContentView: View {
                                             .foregroundColor(.orange)
                                         Text(tweak.name)
                                             .font(.headline)
+                                            .foregroundColor(Color(UIColor.label))
                                     }
                                 } else {
                                     Text(tweak.name)
                                         .font(.headline)
+                                        .foregroundColor(Color(UIColor.label))
                                 }
                             }
                         }
@@ -69,6 +74,7 @@ while true {
                 }) {
                     Text("Respring")
                         .font(.headline)
+                        .foregroundColor(.white)
                         .padding()
                         .background(Color.accentColor)
                         .cornerRadius(40)
