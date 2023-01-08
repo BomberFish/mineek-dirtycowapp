@@ -12,6 +12,28 @@
             "actionType": "keyedit"
         },
         {
+            "name": "Disable Photo shutter sound",
+            "description": "Disables the camera shutter sound. Especially useful in certain regions.",
+            "actions": [
+                {
+                    "file": "/System/Library/Audio/UISounds/photoShutter.caf",
+                    "data": "IA=="
+                }
+            ],
+            "actionType": "replace"
+        },
+        {
+            "name": "Disable Video shutter sound",
+            "description": "Disables the camera shutter sound. Especially useful in certain regions.",
+            "actions": [
+                {
+                    "file": "/System/Library/Audio/UISounds/begin_record.caf",
+                    "data": "IA=="
+                }
+            ],
+            "actionType": "replace"
+        },
+        {
             "name": "AirPower charging sound",
             "description": "Changes the charging sound to that of the now-cancelled AirPower charger",
             "actions": [
