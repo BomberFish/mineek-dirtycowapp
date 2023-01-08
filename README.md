@@ -1,4 +1,4 @@
-# DirtyCowApp
+# DirtyCOW App
 
 This is a all-in-one app for tweaks for iOS 16.1.2 and lower. It uses the MacDirtyCow exploit to overwrite files on the filesystem.
 
