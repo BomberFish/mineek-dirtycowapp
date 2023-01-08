@@ -22,7 +22,7 @@ struct ContentView: View {
             Color(UIColor.systemBackground)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("🐮 DirtyCow")
+                Text("🐮 DirtyCOW")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color(UIColor.label))
