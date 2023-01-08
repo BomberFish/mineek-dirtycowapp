@@ -25,7 +25,7 @@ struct ContentView: View {
                 Text("🐮 DirtyCow")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.label))
                     .padding(.top, 50)
                 List(tweaks) { tweak in
                         VStack(alignment: .leading) {
@@ -64,6 +64,7 @@ struct ContentView: View {
                             }
                         }
                     }
+                .background(Color(UIColor.systemBackground))
                 
                 Button(action: {
                     print("Respringing...")
